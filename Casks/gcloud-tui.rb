@@ -3,7 +3,7 @@ cask "gcloud-tui" do
   name "gcloud-tui"
   desc "Interactive terminal UI for Google Cloud Platform"
   homepage "https://github.com/joeazure/gcloud-tui"
-  version "0.1.2"
+  version "0.1.3"
 
   livecheck do
     skip "Auto-generated on release."
@@ -13,22 +13,28 @@ cask "gcloud-tui" do
 
   on_macos do
     on_intel do
-      url "https://github.com/joeazure/gcloud-tui/releases/download/v#{version}/gcloud-tui_#{version}_darwin_amd64.tar.gz",
-        verified: "github.com/joeazure/gcloud-tui"
-      sha256 "38f135a79057a4105a799f73101a7a15b5d831193c3f7ed9a33ecac3d21bb16a"
+      url "https://github.com/joeazure/app-releases/releases/download/v#{version}/gcloud-tui_#{version}_darwin_amd64.tar.gz",
+        verified: "github.com/joeazure/app-releases"
+      sha256 "59aa11c88ea4172c63b719dd24a4af8130156070f94c0817791ac543be14465d"
     end
     on_arm do
-      url "https://github.com/joeazure/gcloud-tui/releases/download/v#{version}/gcloud-tui_#{version}_darwin_arm64.tar.gz",
-        verified: "github.com/joeazure/gcloud-tui"
-      sha256 "663c3c0ad164ef41b86427ce65b47e6ea745a4a75776c3b79b2930186eaa7fcc"
+      url "https://github.com/joeazure/app-releases/releases/download/v#{version}/gcloud-tui_#{version}_darwin_arm64.tar.gz",
+        verified: "github.com/joeazure/app-releases"
+      sha256 "a3e2c3edbe709d5804502394b9a2ec3102c9989aebfda653005dec71b87a6576"
     end
   end
 
   on_linux do
     on_intel do
-      url "https://github.com/joeazure/gcloud-tui/releases/download/v#{version}/gcloud-tui_#{version}_linux_amd64.tar.gz",
-        verified: "github.com/joeazure/gcloud-tui"
-      sha256 "ab21ea0efce31ae18ba25f5a1f48b67f82621205670fe28e01d88d34f9cbf683"
+      url "https://github.com/joeazure/app-releases/releases/download/v#{version}/gcloud-tui_#{version}_linux_amd64.tar.gz",
+        verified: "github.com/joeazure/app-releases"
+      sha256 "00fc20579c1a3f50c8f163b94152744e7cba7a40e3540f0c7723c7a4870b61f9"
+    end
+  end
+
+  postflight do
+    if OS.mac?
+      system_command "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "#{staged_path}/gcloud-tui"]
     end
   end
 
