@@ -3,7 +3,7 @@ cask "gcloud-tui" do
   name "gcloud-tui"
   desc "Interactive terminal UI for Google Cloud Platform"
   homepage "https://github.com/joeazure/gcloud-tui"
-  version "0.1.3"
+  version "0.1.4"
 
   livecheck do
     skip "Auto-generated on release."
@@ -15,12 +15,12 @@ cask "gcloud-tui" do
     on_intel do
       url "https://github.com/joeazure/app-releases/releases/download/v#{version}/gcloud-tui_#{version}_darwin_amd64.tar.gz",
         verified: "github.com/joeazure/app-releases"
-      sha256 "59aa11c88ea4172c63b719dd24a4af8130156070f94c0817791ac543be14465d"
+      sha256 "a2376f83f0465e3e1406d23607d9ae34e8b192a565953210ddd385d63c99cf58"
     end
     on_arm do
       url "https://github.com/joeazure/app-releases/releases/download/v#{version}/gcloud-tui_#{version}_darwin_arm64.tar.gz",
         verified: "github.com/joeazure/app-releases"
-      sha256 "a3e2c3edbe709d5804502394b9a2ec3102c9989aebfda653005dec71b87a6576"
+      sha256 "ec3b409306bd420033b68b15b1fa1e846b7ea14c68f6fc3678efd7162c970d71"
     end
   end
 
@@ -28,7 +28,7 @@ cask "gcloud-tui" do
     on_intel do
       url "https://github.com/joeazure/app-releases/releases/download/v#{version}/gcloud-tui_#{version}_linux_amd64.tar.gz",
         verified: "github.com/joeazure/app-releases"
-      sha256 "00fc20579c1a3f50c8f163b94152744e7cba7a40e3540f0c7723c7a4870b61f9"
+      sha256 "3ca98684bd82ebf20b2a3c79b7a53e159fbf9ff92dfe94e741992422f2981157"
     end
   end
 
