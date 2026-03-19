@@ -9,3 +9,7 @@
   ```
   brew install gcloud-tui
   ```
+- Run
+  ```
+  gcloud-tui
+  ```
